@@ -18,7 +18,10 @@ export default function EpisodeDetail() {
   }
 
   const mains = ep.movies.filter((m) => m.role === 'main')
-  const mentioned = ep.movies.filter((m) => m.role === 'mentioned')
+  const mentioned = ep.movies
+    .filter((m) => m.role === 'mentioned')
+    .sort((a, b) => (getMovie(a.movieId)?.year ?? 9999) - (getMovie(b.movieId)?.year ?? 9999))
+
   const hostEntry = ep.guests.find((g) => g.guestId === '波米')
   const otherGuests = ep.guests.filter((g) => g.guestId !== '波米')
   const isMa = seriesGroup(ep.series) === 'ma'
