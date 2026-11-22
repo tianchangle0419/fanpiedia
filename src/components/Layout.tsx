@@ -1,6 +1,5 @@
 import { Link, NavLink, Outlet } from 'react-router'
 import SearchBox from '@/components/SearchBox'
-import { siteStats } from '@/data/archive'
 
 const NAV = [
   { to: '/episodes', zh: '节目', en: 'EPISODES' },
@@ -10,7 +9,6 @@ const NAV = [
 ]
 
 export default function Layout() {
-  const s = siteStats()
   return (
     <div className="flex min-h-dvh flex-col">
       <header className="sticky top-0 z-30 border-b border-ink-15 bg-paper/95 backdrop-blur-sm">
@@ -50,14 +48,6 @@ export default function Layout() {
         <div className="mx-auto max-w-5xl px-4 py-10 md:px-8">
           <p className="font-display text-2xl md:text-3xl">
             反派影评<span className="text-signal">·</span>档案索引
-          </p>
-          <p className="mt-3 max-w-prose text-sm leading-relaxed text-ink-60">
-            听友自建的非官方文字索引：按电影与嘉宾反查节目期数。当前收录
-            <span className="font-mono tabular-nums"> {s.episodes} </span>期（长节目 №001–№239 +
-            马后炮 MA000–MA146 + 耳旁风 ER001–ER322）、
-            <span className="font-mono tabular-nums"> {s.movies} </span>部电影、
-            <span className="font-mono tabular-nums"> {s.mentions} </span>
-            条片目提及，全部解析自节目 shownotes。
           </p>
           <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-[0.15em] text-ink-60">
             <Link to="/episodes" className="nav-link h-11 inline-flex items-center hover:text-signal">节目目录</Link>

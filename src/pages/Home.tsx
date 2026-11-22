@@ -25,9 +25,8 @@ export default function Home() {
           都能找回聊到它的<span className="text-signal">那期节目</span>。
         </h1>
         <p className="mt-5 max-w-prose text-base leading-relaxed text-ink-60 md:text-lg">
-          「反派影评」听友自建的倒排索引：从一部电影、一位嘉宾出发，
-          立刻定位它出现在哪几期节目。收录长节目与衍生节目《马后炮》《耳旁风》，
-          数据整理自节目 shownotes。
+          「反派影评」听友自建的索引：从一部电影、一位嘉宾、一位导演出发，
+          立刻定位它出现在哪几期节目。
         </p>
         <div className="mt-8 max-w-xl">
           <SearchBox />
