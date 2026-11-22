@@ -36,26 +36,27 @@ export function epLabel(e: Episode): string {
 export function seriesLabel(s: Episode['series']): string {
   switch (s) {
     case 'ma':
-    case 'ma-sp':
-    case 'ma-x':
       return '马后炮'
     case 'er':
+      return '耳旁风'
+    case 'ma-sp':
+    case 'ma-x':
     case 'er-sp':
     case 'er-zt':
     case 'er-x':
-      return '耳旁风'
     case 'sp':
-      return '特别期'
+      return '其他内容'
     default:
       return '长节目'
   }
 }
 
-/** 系列分组（筛选器用）：main / ma / er */
-export function seriesGroup(s: Episode['series']): 'main' | 'ma' | 'er' {
-  if (s === 'main' || s === 'sp') return 'main'
-  if (s.startsWith('er')) return 'er'
-  return 'ma'
+/** 系列分组（筛选器用）：main / ma / er / other */
+export function seriesGroup(s: Episode['series']): 'main' | 'ma' | 'er' | 'other' {
+  if (s === 'main') return 'main'
+  if (s === 'er') return 'er'
+  if (s === 'ma') return 'ma'
+  return 'other'
 }
 
 /** 按上线日期排序（新→旧） */
@@ -139,6 +140,7 @@ export function siteStats() {
     main: episodes.filter((e) => seriesGroup(e.series) === 'main').length,
     ma: episodes.filter((e) => seriesGroup(e.series) === 'ma').length,
     er: episodes.filter((e) => seriesGroup(e.series) === 'er').length,
+    other: episodes.filter((e) => seriesGroup(e.series) === 'other').length,
   }
 }
 

@@ -4,7 +4,7 @@ import { EpNo, SectionHead } from '@/components/bits'
 import { byDateDesc, epLabel, episodes, getGuest, getMovie, seriesGroup, seriesLabel } from '@/data/archive'
 
 type SortKey = 'desc' | 'asc'
-type SeriesFilter = 'all' | 'main' | 'ma' | 'er'
+type SeriesFilter = 'all' | 'main' | 'ma' | 'er' | 'other'
 
 export default function Episodes() {
   const [sort, setSort] = useState<SortKey>('desc')
@@ -48,6 +48,7 @@ export default function Episodes() {
               ['main', '长节目'],
               ['ma', '马后炮'],
               ['er', '耳旁风'],
+              ['other', '其他内容'],
             ] as const
           ).map(([k, label]) => (
             <button
