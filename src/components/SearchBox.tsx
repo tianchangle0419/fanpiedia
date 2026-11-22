@@ -127,7 +127,7 @@ export default function SearchBox({
         <div
           role="listbox"
           aria-label="搜索结果"
-          className="absolute right-0 top-full z-40 mt-1 max-h-[60vh] w-[min(26rem,calc(100vw-2rem))] overflow-y-auto border border-ink-15 bg-paper shadow-[0_8px_24px_rgba(34,34,34,0.12)]"
+          className="absolute right-0 top-full z-40 mt-1 max-h-[60vh] w-[min(20rem,calc(100vw-2rem))] overflow-y-auto border border-ink-15 bg-paper shadow-[0_8px_24px_rgba(34,34,34,0.12)]"
         >
           {items.length === 0 ? (
             <p className="px-4 py-6 text-sm text-ink-60">

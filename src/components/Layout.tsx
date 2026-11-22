@@ -34,7 +34,7 @@ export default function Layout() {
               </NavLink>
             ))}
           </nav>
-          <div className="hidden w-56 shrink-0 lg:block">
+          <div className="hidden w-80 shrink-0 lg:block">
             <SearchBox placeholder="搜电影 / 导演 / 嘉宾 / 期数…" />
           </div>
         </div>
