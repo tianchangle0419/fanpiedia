@@ -142,34 +142,7 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* 数据结构说明 */}
-      <section className="pt-14 md:pt-20">
-        <SectionHead en="How it works" zh="索引如何组织" />
-        <div className="grid gap-px border border-ink-15 bg-ink-15 md:grid-cols-3">
-          {[
-            {
-              t: '电影 → 期数',
-              d: '每部电影是一张倒排表：哪些期专题主聊过、哪些期的片目里提及过，一眼分清「专聊」和「路过」。',
-            },
-            {
-              t: '嘉宾 → 期数',
-              d: '每位嘉宾一张出场表：在哪几期出现、那期聊了什么片、给了多少分，顺着人就能找回想重听的节目。',
-            },
-            {
-              t: '数据 → 来源',
-              d: '全部整理自节目 shownotes：期号、日期、时长、嘉宾评分、片目均为真实数据，自动解析生成；《马后炮》《耳旁风》的片目从 shownotes 正文提取，覆盖度略低于长节目。',
-            },
-          ].map((c) => (
-            <div key={c.t} className="bg-paper p-5 md:p-6">
-              <h3 className="font-display text-lg">{c.t}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-60">{c.d}</p>
-            </div>
-          ))}
-        </div>
-        <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.15em] text-ink-40">
-          Real data — 长节目 №001–№239 + 马后炮 MA000–MA146 + 耳旁风 ER001–ER322（2016–2024.08），新期数后续手动补录
-        </p>
-      </section>
+
     </div>
   )
 }

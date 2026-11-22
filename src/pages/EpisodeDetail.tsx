@@ -101,7 +101,6 @@ export default function EpisodeDetail() {
         </section>
       )}
 
-      {/* 本期片目 */}
       {mentioned.length > 0 && (
         <section className="pt-12">
           <SectionHead
